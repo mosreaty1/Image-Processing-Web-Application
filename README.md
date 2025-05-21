@@ -1,108 +1,121 @@
 # Image-Processing-Web-Application
 A Flask-based web application for applying various image processing techniques and filters to uploaded images.
 
-✨ Features
-Image Processing (app.py)
-Brightness enhancement
+🌟 Key Features
+1. Unified Image Processing Pipeline
+Enhancements: Brightness, Contrast, Gamma Correction
 
-Contrast adjustment
+Compression: JPEG (lossy) and PNG (lossless)
 
-Gamma transformation
+Segmentation: Thresholding, Watershed, Gray-Level Slicing
 
-Histogram equalization
+Histogram Equalization for dynamic range adjustment
 
-Image compression (JPEG and PNG)
+2. Advanced Filtering
+Noise Handling: Add/remove Salt & Pepper noise
 
-Image segmentation (Thresholding, Watershed)
+Spatial Filters: Gaussian Blur, Standard Deviation Edge Detection
 
-Gray level slicing
+Transformations: Grayscale, Image Complement (Inversion)
 
-Image Filters (filter.py)
-Grayscale conversion
+Optimized Processing: Parallel execution with ThreadPoolExecutor
 
-Standard deviation filter
+3. User-Friendly Interface
+Responsive HTML/CSS templates
 
-Gaussian blur
+Side-by-side comparison of original/processed images
 
-Image complement (inversion)
+Mobile-friendly design
 
-Salt & pepper noise addition and denoising
+🛠️ Technology Stack
+Component	Tools & Libraries
+Backend	Python, Flask
+Image Ops	OpenCV, Pillow, NumPy, scikit-image
+Frontend	HTML5, CSS3
+Performance	ThreadPoolExecutor, Image Resizing
+🚀 Getting Started
+Prerequisites
+Python 3.7+
 
-Parallel processing with ThreadPoolExecutor
+pip package manager
 
-🛠️ Technologies Used
-Backend: Python, Flask
-
-Image Processing: OpenCV, Pillow, NumPy, scikit-image
-
-Frontend: HTML, CSS
-
-Concurrency: ThreadPoolExecutor
-
-🚀 Installation & Setup
+Installation
 Clone the repository:
 
 bash
-git clone https://github.com/yourusername/image-processing-app.git
-cd image-processing-app
-Create a virtual environment (recommended):
+git clone https://github.com/yourusername/image-processing-suite.git
+cd image-processing-suite
+Set up a virtual environment:
 
 bash
 python -m venv venv
-source venv/bin/activate  # On Windows use `venv\Scripts\activate`
+source venv/bin/activate  # Linux/Mac | Windows: `venv\Scripts\activate`
 Install dependencies:
 
 bash
 pip install -r requirements.txt
-Run the application:
-
-For image processing:
-
+Launch the Application
 bash
-python app.py
-For image filters:
+python app.py  # Main application with all features
+Access at: http://localhost:5000
 
-bash
-python filter.py
-Access the application:
-Open your browser and navigate to:
-
-Image Processing: http://localhost:5000
-
-Image Filters: http://localhost:5000
-
-📂 Project Structure
-image-processing-app/
+📂 Project Architecture
+image-processing-suite/
 ├── static/
-│   ├── uploads/          # Uploaded and processed images
-│   ├── style.css         # CSS for filter.html
-│   └── styles.css        # CSS for upload.html
+│   ├── uploads/           # Stores all uploaded/processed images
+│   ├── styles.css         # Unified styling for all pages
 ├── templates/
-│   ├── filter.html       # Image filters interface
-│   └── upload.html       # Image processing interface
-├── app.py                # Main image processing application
-├── filter.py             # Image filters application
+│   ├── index.html         # Main interface with feature selection
+│   ├── processing.html    # Image processing UI
+│   └── filters.html       # Filter operations UI
+├── app.py                 # Unified backend (merges app.py + filter.py logic)
+├── requirements.txt       # Dependencies
 └── README.md
-📝 Requirements
-Python 3.7+
+🎨 Workflow
+Upload an image via the web interface.
 
-Required packages (install via pip install -r requirements.txt):
+Select processing/filtering options.
 
-flask
-pillow
-opencv-python
-numpy
-scikit-image
-scipy
-👥 Contributors
+View results in a responsive grid layout.
+
+Download processed images.
+
+🖥️ UI Preview
+(Example screenshots - add actual images later)
+
+Main Page: Feature selection dashboard
+
+Processing View: Side-by-side image comparisons
+
+Filters View: Sliders for parameter adjustments
+
+🤝 Contributors
 Mohamed Alsariti
 
 Mariam Alrafaei
 
 📜 License
-This project is licensed under the MIT License - see the LICENSE file for details.
+MIT License. See LICENSE for details.
 
-Note: Make sure to create a requirements.txt file with all the necessary dependencies if you haven't already. You can generate one using:
+🔧 Development Roadmap
+Add batch processing
+
+Implement user authentication
+
+Dockerize application
+
+💡 How to Contribute
+Fork the repository
+
+Create a feature branch (git checkout -b feature/AmazingFeature)
+
+Commit changes (git commit -m 'Add feature')
+
+Push to branch (git push origin feature/AmazingFeature)
+
+Open a Pull Request
+
+Pro Tip: Generate requirements.txt automatically:
 
 bash
 pip freeze > requirements.txt
