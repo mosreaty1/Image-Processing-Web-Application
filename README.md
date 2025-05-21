@@ -57,5 +57,5 @@ A comprehensive web application for image processing and filtering built with Fl
 ### Installation
 1. Clone the repo:
    ```bash
-   git clone https://github.com/yourusername/image-processing-app.git
+   git clone https://github.com/mosreaty1/image-processing-app.git
    cd image-processing-app
