@@ -1,121 +1,61 @@
-# Image-Processing-Web-Application
-A Flask-based web application for applying various image processing techniques and filters to uploaded images.
+# 🖼️ Image Processing Web App
 
-🌟 Key Features
-1. Unified Image Processing Pipeline
-Enhancements: Brightness, Contrast, Gamma Correction
+<div align="center">
+  <img src="https://img.shields.io/badge/Python-3.7%2B-blue?logo=python" alt="Python Version">
+  <img src="https://img.shields.io/badge/Flask-2.0-green?logo=flask" alt="Flask Version">
+  <img src="https://img.shields.io/badge/License-MIT-yellow" alt="License">
+</div>
 
-Compression: JPEG (lossy) and PNG (lossless)
+<br>
 
-Segmentation: Thresholding, Watershed, Gray-Level Slicing
+A comprehensive web application for image processing and filtering built with Flask and OpenCV. Upload images and apply various transformations in real-time.
 
-Histogram Equalization for dynamic range adjustment
+## ✨ Features
 
-2. Advanced Filtering
-Noise Handling: Add/remove Salt & Pepper noise
+### Image Processing
+- Brightness/Contrast adjustment
+- Gamma correction
+- Histogram equalization
+- Image compression (JPEG/PNG)
+- Threshold segmentation
+- Watershed algorithm
+- Gray-level slicing
 
-Spatial Filters: Gaussian Blur, Standard Deviation Edge Detection
+### Image Filters
+- Grayscale conversion
+- Gaussian blur
+- Standard deviation filter
+- Image complement (inversion)
+- Salt & pepper noise + denoising
 
-Transformations: Grayscale, Image Complement (Inversion)
+### Technical Highlights
+- Parallel processing with ThreadPoolExecutor
+- Responsive web interface
+- Side-by-side result comparisons
+- Mobile-friendly design
 
-Optimized Processing: Parallel execution with ThreadPoolExecutor
+## 🛠️ Tech Stack
 
-3. User-Friendly Interface
-Responsive HTML/CSS templates
+**Backend:**
+- Python 3.7+
+- Flask
+- OpenCV
+- Pillow
+- NumPy
+- scikit-image
 
-Side-by-side comparison of original/processed images
+**Frontend:**
+- HTML5
+- CSS3
 
-Mobile-friendly design
+## 🚀 Quick Start
 
-🛠️ Technology Stack
-Component	Tools & Libraries
-Backend	Python, Flask
-Image Ops	OpenCV, Pillow, NumPy, scikit-image
-Frontend	HTML5, CSS3
-Performance	ThreadPoolExecutor, Image Resizing
-🚀 Getting Started
-Prerequisites
-Python 3.7+
+### Prerequisites
+- Python 3.7+
+- pip
 
-pip package manager
-
-Installation
-Clone the repository:
-
-bash
-git clone https://github.com/yourusername/image-processing-suite.git
-cd image-processing-suite
-Set up a virtual environment:
-
-bash
-python -m venv venv
-source venv/bin/activate  # Linux/Mac | Windows: `venv\Scripts\activate`
-Install dependencies:
-
-bash
-pip install -r requirements.txt
-Launch the Application
-bash
-python app.py  # Main application with all features
-Access at: http://localhost:5000
-
-📂 Project Architecture
-image-processing-suite/
-├── static/
-│   ├── uploads/           # Stores all uploaded/processed images
-│   ├── styles.css         # Unified styling for all pages
-├── templates/
-│   ├── index.html         # Main interface with feature selection
-│   ├── processing.html    # Image processing UI
-│   └── filters.html       # Filter operations UI
-├── app.py                 # Unified backend (merges app.py + filter.py logic)
-├── requirements.txt       # Dependencies
-└── README.md
-🎨 Workflow
-Upload an image via the web interface.
-
-Select processing/filtering options.
-
-View results in a responsive grid layout.
-
-Download processed images.
-
-🖥️ UI Preview
-(Example screenshots - add actual images later)
-
-Main Page: Feature selection dashboard
-
-Processing View: Side-by-side image comparisons
-
-Filters View: Sliders for parameter adjustments
-
-🤝 Contributors
-Mohamed Alsariti
-
-Mariam Alrafaei
-
-📜 License
-MIT License. See LICENSE for details.
-
-🔧 Development Roadmap
-Add batch processing
-
-Implement user authentication
-
-Dockerize application
-
-💡 How to Contribute
-Fork the repository
-
-Create a feature branch (git checkout -b feature/AmazingFeature)
-
-Commit changes (git commit -m 'Add feature')
-
-Push to branch (git push origin feature/AmazingFeature)
-
-Open a Pull Request
-
-Pro Tip: Generate requirements.txt automatically:
-
-bash
-pip freeze > requirements.txt
+### Installation
+1. Clone the repo:
+   ```bash
+   git clone https://github.com/yourusername/image-processing-app.git
+   cd image-processing-app
