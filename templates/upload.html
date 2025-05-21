@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Processing</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Upload an Image for Processing</h1>
+        <form action="/upload" method="POST" enctype="multipart/form-data">
+            <input type="file" name="image" accept="image/*" required>
+            <button type="submit">Upload</button>
+        </form>
+    </div>
+
+    {% if original %}
+        <h2>Results</h2>
+        <div class="results-container">
+            <div class="result-card">
+                <h3>Original Image</h3>
+                <img src="{{ url_for('serve_file', filename=original) }}" alt="Original Image">
+            </div>
+
+            <div class="result-card">
+                <h3>Brightness Enhanced</h3>
+                <img src="{{ url_for('serve_file', filename=bright) }}" alt="Brightness Enhanced Image">
+            </div>
+
+            <div class="result-card">
+                <h3>Contrast Enhanced</h3>
+                <img src="{{ url_for('serve_file', filename=contrast) }}" alt="Contrast Enhanced Image">
+            </div>
+
+            <div class="result-card">
+                <h3>Gamma Transformed</h3>
+                <img src="{{ url_for('serve_file', filename=gamma) }}" alt="Gamma Image">
+            </div>
+
+            <div class="result-card">
+                <h3>Histogram Equalized</h3>
+                <img src="{{ url_for('serve_file', filename=histogram) }}" alt="Histogram Equalized Image">
+            </div>
+
+            <div class="result-card">
+                <h3>Compressed (JPEG)</h3>
+                <img src="{{ url_for('serve_file', filename=compressed) }}" alt="Compressed Image">
+            </div>
+
+            <div class="result-card">
+                <h3>Lossless Compressed (PNG)</h3>
+                <img src="{{ url_for('serve_file', filename=lossless) }}" alt="Lossless Compressed Image">
+            </div>
+
+            <div class="result-card">
+                <h3>Segmented Image</h3>
+                <img src="{{ url_for('serve_file', filename=segmented) }}" alt="Segmented Image">
+            </div>
+
+            <div class="result-card">
+                <h3>Watershed Segmentation</h3>
+                <img src="{{ url_for('serve_file', filename=watershed) }}" alt="Watershed Image">
+            </div>
+
+            <div class="result-card">
+                <h3>Thresholded Image</h3>
+                <img src="{{ url_for('serve_file', filename=threshold) }}" alt="Thresholded Image">
+            </div>
+
+            <div class="result-card">
+                <h3>Gray Level Slicing</h3>
+                <img src="{{ url_for('serve_file', filename=gray_slice) }}" alt="Gray Level Sliced Image">
+            </div>
+        </div>
+    {% endif %}
+
+    <footer>
+        <p>&copy; Created By: mohamed alsariti & mariam alrafaei.</p>
+    </footer>
+</body>
+</html>

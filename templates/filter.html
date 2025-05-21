@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Filters</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Upload an Image for Filters</h1>
+        <form action="/upload" method="POST" enctype="multipart/form-data">
+            <input type="file" name="image" accept="image/*" required>
+            <button type="submit">Upload Image</button>
+        </form>
+
+        {% if original %}
+        <div class="image-gallery">
+            <h2>Original Image</h2>
+            <img src="{{ url_for('serve_file', filename=original) }}" alt="Original Image">
+
+            <h2>Processed Images</h2>
+            <div class="image-grid">
+                <div class="image-item">
+                    <h3>Gray Image</h3>
+                    <img src="{{ url_for('serve_file', filename=gray) }}" alt="Gray Image">
+                </div>
+                <div class="image-item">
+                    <h3>Standard Deviation Filter</h3>
+                    <img src="{{ url_for('serve_file', filename=std_dev) }}" alt="Standard Deviation Filter">
+                </div>
+                <div class="image-item">
+                    <h3>Gaussian Filter</h3>
+                    <img src="{{ url_for('serve_file', filename=gaussian) }}" alt="Gaussian Filter">
+                </div>
+                <div class="image-item">
+                    <h3>Complement Image</h3>
+                    <img src="{{ url_for('serve_file', filename=complement) }}" alt="Complement Image">
+                </div>
+                <div class="image-item">
+                    <h3>Salt and Pepper Noise</h3>
+                    <img src="{{ url_for('serve_file', filename=salt_pepper) }}" alt="Salt and Pepper Noise">
+                </div>
+                <div class="image-item">
+                    <h3>Denoised Image</h3>
+                    <img src="{{ url_for('serve_file', filename=denoised) }}" alt="Denoised Image">
+                </div>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
